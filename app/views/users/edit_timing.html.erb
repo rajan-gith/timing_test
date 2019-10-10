@@ -1,0 +1,10 @@
+<%= form_for @user, url: update_timing_path(id: @user.id) do |f| %>
+  <%= f.collection_check_boxes :week_day_ids, @week_days, :id, :name do |p| %>
+    <label>
+      <%= p.check_box() %>
+      <span class="label-text"><%= p.object.name %></span>
+    </label>
+  <% end %>
+  <br>
+  <%= f.submit %>
+<% end %>
